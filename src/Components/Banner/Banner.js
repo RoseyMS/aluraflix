@@ -1,7 +1,10 @@
 import "./Banner.css"
 
 const Banner = (props) => {
-    return <></>
+    return <div className="banner-container">
+
+    </div>
+
 }
 
 export default Banner

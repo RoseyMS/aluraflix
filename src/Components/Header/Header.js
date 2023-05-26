@@ -1,13 +1,15 @@
 import "./Header.css"
+import Button from "../Button/Button"
 
 const Header = () => {
     return <header className="header">
 
         <a href="">
-            <img src="https://fontmeme.com/permalink/230520/1757901d4a53a3407992bd0b72651640.png"
+            <img className="logo" src="https://fontmeme.com/permalink/230526/e6e3b85ffddbadafa4d505d5ec1007f8.png"
                 alt="catflix logo" border="0">
             </img>
         </a>
+        <Button title="Nuevo video" backgroundColor="grey" color="white" border-color="white"></Button>
     </header>
 }
 
