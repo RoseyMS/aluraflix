@@ -1,17 +1,17 @@
 import "./OptionList.css"
 const OptionList = (props) => {
 
-
     const handleChange = (e) => {
         props.setCategory(e.target.value)
+        console.log(e.target.value)
     }
 
     return <div className="option-list">
-        <label>Categorias</label>
-        <select value={props.categories} onChange={handleChange}>
+        <label>Categoría</label>
+        <select value={props.value} onChange={handleChange}>
             <option value="" disabled defaultValue="" hidden>Seleccionar categoria</option>
             {props.categories.map((category, index) =>
-                <option key={index} value={category}>{category}
+                <option key={index} value={category.value}>{category.title}
                 </option>
             )}
         </select>

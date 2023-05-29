@@ -1,7 +1,8 @@
 import "./Header.css"
 import Button from "../Button/Button"
 
-const Header = () => {
+const Header = ({ handleShowCategoryLog }) => {
+
     return <header className="header">
 
         <a href="">
@@ -9,7 +10,14 @@ const Header = () => {
                 alt="catflix logo" border="0">
             </img>
         </a>
-        <Button title="Nuevo video" backgroundColor="grey" color="white" border-color="white"></Button>
+        <Button
+            title="Nuevo video"
+            backgroundColor="grey"
+            color="white"
+            border-color="white"
+            handleShowCategoryLog={handleShowCategoryLog}
+        >
+        </Button>
     </header>
 }
 

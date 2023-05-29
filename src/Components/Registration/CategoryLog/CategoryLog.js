@@ -1,20 +1,13 @@
 import "./CategoryLog.css"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import TextInput from "../../TextInput/TextInput";
 import OptionList from "../../OptionList/OptionList";
 import Button from "../../Button/Button";
-//import { TextField, Button, Select, MenuItem, FormControl, InputLabel, FormHelperText } from '@mui/material';
+import { CategoryContext } from "../../../App"
 
-/* Crea el componente de Registro Categoria y utilizando el componente Campo deTexto,
- desarrolle un formulario de Registro de Nueva Categoría.
-Aquí será muy importante utilizar Hooks como useState y useEffect, además de map.
-También no olvides usar el componente DefaultPage */
 const CategoryLog = (props) => {
-    /*  titulo, link del video, 
-    link imagen del video, escoja la categoria, 
-    descripcion, codigo de seguridad 
-    y los botones guardar, limpiar, nueva categoria */
-    const categories = ['Categoría 1', 'Categoría 2', 'Categoría 3'];
+
+    const { categories } = useContext(CategoryContext);
 
     const [title, setTitle] = useState("")
     const [videoLink, setVideoLink] = useState("")
@@ -23,16 +16,18 @@ const CategoryLog = (props) => {
     const [description, setDescription] = useState("")
     const [securityCode, setSecurityCode] = useState("")
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Datos enviados:', {
+        console.log('Datos enviados:'/* , {
             title,
             videoLink,
             imgLink,
             category,
             description,
             securityCode
-        });
+        } */);
     };
 
 
@@ -44,6 +39,7 @@ const CategoryLog = (props) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+            updateValue={setTitle}
         />
         <TextInput
             title="Link del video"
@@ -51,6 +47,7 @@ const CategoryLog = (props) => {
             value={videoLink}
             onChange={(e) => setVideoLink(e.target.value)}
             required
+            updateValue={setVideoLink}
         />
         <TextInput
             title="Link de la imagen"
@@ -58,6 +55,7 @@ const CategoryLog = (props) => {
             value={imgLink}
             onChange={(e) => setImgLink(e.target.value)}
             required
+            updateValue={setImgLink}
         />
         <OptionList
             value={category}
@@ -70,6 +68,7 @@ const CategoryLog = (props) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             required
+            updateValue={setDescription}
         />
         <TextInput
             title="Código de seguridad"
@@ -77,6 +76,7 @@ const CategoryLog = (props) => {
             value={securityCode}
             onChange={(e) => setSecurityCode(e.target.value)}
             required
+            updateValue={setSecurityCode}
         />
         <div className="buttons-container">
             <div className="left-btn-container">
@@ -87,7 +87,8 @@ const CategoryLog = (props) => {
             <Button
                 title="Nueva Categoria"
                 backgroundColor="blue"
-                color="white" />
+                color="white"
+                handleShowVideoLog={props.handleShowVideoLog} />
         </div>
 
     </form>
