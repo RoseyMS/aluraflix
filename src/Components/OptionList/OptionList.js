@@ -3,6 +3,7 @@ const OptionList = (props) => {
 
     const handleChange = (e) => {
         props.setCategory(e.target.value)
+        console.log(e.target.value)
     }
 
     return <div className="option-list">

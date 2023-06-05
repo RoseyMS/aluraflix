@@ -1,12 +1,12 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useContext } from "react";
 import Header from "./Components/Header/Header";
 import CategoryLog from "./Components/Registration/CategoryLog/CategoryLog";
 import Footer from "./Components/Footer/Footer"
 import VideoLog from "./Components/Registration/VideoLog/VideoLog";
-import Home from "./Components/Home/Home"
 
-export const CategoryContext = createContext()
-export const VideoContext = createContext()
+export const CategoryContext = createContext(
+
+);
 
 function App() {
   const [showCategoryLog, setShowCategoryLog] = useState(false);
@@ -14,85 +14,23 @@ function App() {
   const [categories, setCategories] = useState([
     {
       id: 1,
-      title: "gatos",
+      title: "Gatos",
       color: "#57C278",
       securityCode: "12345"
     },
     {
       id: 2,
-      title: "perros",
+      title: "Perros",
       color: "#97D278",
       securityCode: "543699"
     },
     {
       id: 3,
-      title: "otros",
-      color: "#52F438",
-      securityCode: "12345"
-    },
-    {
-      id: 4,
-      title: "varios",
+      title: "Otros",
       color: "#52F438",
       securityCode: "12345"
     }
   ]);
-  const [videos, setVideos] = useState([{
-    id: 1,
-    title: "Gatitos con musica suave",
-    videoLink: "https://www.youtube.com/embed/JTmbgLwRIvY",
-    imgLink: "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
-    category: "gatos",
-    description: "gatos con musica suave",
-    securityCode: "1234"
-  },
-  {
-    id: 2,
-    title: "Gatitos con musica suave",
-    videoLink: "https://www.youtube.com/embed/C81RmDpM8Mo",
-    imgLink: "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
-    category: "perros",
-    description: "gatos con musica suave",
-    securityCode: "1234"
-  },
-  {
-    id: 3,
-    title: "Gatitos con musica suave",
-    videoLink: "https://www.youtube.com/embed/IYAomYee5Hk",
-    imgLink: "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
-    category: "otros",
-    description: "gatos con musica suave",
-    securityCode: "1234"
-  },
-  {
-    id: 4,
-    title: "Gatitos con musica suave",
-    videoLink: "https://www.youtube.com/embed/IYAomYee5Hk",
-    imgLink: "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
-    category: "gatos",
-    description: "gatos con musica suave",
-    securityCode: "1234"
-  },
-  {
-    id: 5,
-    title: "Gatitos con musica suave",
-    videoLink: "https://www.youtube.com/embed/IYAomYee5Hk",
-    imgLink: "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
-    category: "gatos",
-    description: "gatos con musica suave",
-    securityCode: "1234"
-  },
-    ,
-  {
-    id: 6,
-    title: "Gatitos con musica suave",
-    videoLink: "https://www.youtube.com/embed/IYAomYee5Hk",
-    imgLink: "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
-    category: "gatos",
-    description: "gatos con musica suave",
-    securityCode: "1234"
-  }
-  ])
 
   function handleShowCategoryLog() {
     setShowCategoryLog(!showCategoryLog);
@@ -103,34 +41,12 @@ function App() {
     setShowCategoryLog(!showCategoryLog);
   };
 
-  const categoryRegistration = (category) => {
-    console.log("Nueva categoria", category)
-    setCategories([...categories, category])
-    //crearEquipo={crearEquipo}
-  }
-  const videoRegistration = (newVideo) => {
-    console.log(newVideo)
-    setVideos([...videos, { ...newVideo }])
-  }
   return (
     <CategoryContext.Provider value={{ categories, setCategories }}>
-      <VideoContext.Provider value={{ videos, setVideos }}>
-        <Header handleShowCategoryLog={handleShowCategoryLog} />
-        {showCategoryLog && (
-          <CategoryLog
-            handleShowVideoLog={handleShowVideoLog}
-            videoRegistration={videoRegistration}
-          />
-        )}
-        {showVideoLog && (
-          <VideoLog
-            categories={categories.map((category) => category.title)}
-            categoryRegistration={categoryRegistration}
-          />
-        )}
-        {/*  <Home /> */}
-        <Footer />
-      </VideoContext.Provider>
+      <Header handleShowCategoryLog={handleShowCategoryLog} />
+      {showCategoryLog && <CategoryLog handleShowVideoLog={handleShowVideoLog} />}
+      {showVideoLog && <VideoLog />}
+      <Footer />
     </CategoryContext.Provider>
   );
 }

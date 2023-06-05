@@ -6,24 +6,20 @@ import { useState } from "react";
 const VideoLog = (props) => {
 
 
-
+    const categories = ['Categoría 1', 'Categoría 2', 'Categoría 3'];
     const [title, setTitle] = useState("")
     const [color, setColor] = useState("")
     const [securityCode, setSecurityCode] = useState("")
 
-
-    const { categoryRegistration } = props
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        let dataToSend = {
+
+        console.log('Datos enviados:', {
             title,
             color,
             securityCode
-        }
-        categoryRegistration(dataToSend)
+        });
     };
-
     /* const handleLimpiar = () => {
         setTitle('');
         setColor('');
@@ -38,7 +34,6 @@ const VideoLog = (props) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            updateValue={setTitle}
         />
         <TextInput
             type="color"
@@ -47,7 +42,6 @@ const VideoLog = (props) => {
             value={color}
             onChange={(e) => setColor(e.target.value)}
             required
-            updateValue={setColor}
         />
         <TextInput
             title="Codigo de seguridad"
@@ -55,7 +49,6 @@ const VideoLog = (props) => {
             value={securityCode}
             onChange={(e) => setSecurityCode(e.target.value)}
             required
-            updateValue={setSecurityCode}
         />
         <div className="buttons-container">
             <div className="left-btn-container">
