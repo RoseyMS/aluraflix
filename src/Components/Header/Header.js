@@ -6,8 +6,8 @@ const Header = ({ handleShowCategoryLog }) => {
     return <header className="header">
 
         <a href="">
-            <img className="logo" src="https://fontmeme.com/permalink/230526/e6e3b85ffddbadafa4d505d5ec1007f8.png"
-                alt="catflix logo" border="0">
+            <img className="logo" src="https://fontmeme.com/permalink/230529/053b11f53114b5c3bd349c8cef85f1a5.png"
+                alt="petflix logo" border="0">
             </img>
         </a>
         <Button

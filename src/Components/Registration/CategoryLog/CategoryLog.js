@@ -16,18 +16,20 @@ const CategoryLog = (props) => {
     const [description, setDescription] = useState("")
     const [securityCode, setSecurityCode] = useState("")
 
-
+    const { videoRegistration } = props
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Datos enviados:'/* , {
+
+        let dataToSend = {
             title,
             videoLink,
             imgLink,
             category,
             description,
             securityCode
-        } */);
+        }
+        videoRegistration(dataToSend)
     };
 
 
