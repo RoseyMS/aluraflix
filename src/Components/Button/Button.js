@@ -9,6 +9,9 @@ const Button = (props) => {
         if (typeof props.handleShowCategoryForm === "function") {
             props.handleShowCategoryForm();
         }
+        if (typeof props.handleClear === "function") {
+            props.handleClear();
+        }
     };
 
     return <button

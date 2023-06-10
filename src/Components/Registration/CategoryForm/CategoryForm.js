@@ -71,11 +71,10 @@ const CategoryForm = (props) => {
     }
 
 
-    const handleClear = () => {
-        setName('');
-        setColor('');
-        setDescription('');
-        setSecurityCode('');
+    function handleClear() {
+        inputs.forEach((input) => {
+            input.updateValue('');
+        });
     };
     const handleDelete = (id) => {
         const newCategories = categories.filter((category) => category.id !== id);
@@ -83,7 +82,7 @@ const CategoryForm = (props) => {
         handleClear();
     };
     return <>
-        <Form inputs={inputs} handleSubmit={handleSubmit} />
+        <Form inputs={inputs} handleSubmit={handleSubmit} handleClear={handleClear} />
         <Table onDelete={handleDelete} onEdit={onEdit} />
     </>
 }

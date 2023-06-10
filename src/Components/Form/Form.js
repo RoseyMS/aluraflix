@@ -38,12 +38,14 @@ const Form = (props) => {
                         title="Guardar"
                         backgroundColor="blue"
                         color="white"
+
                     />
                     <Button
                         type="button"
                         title="Limpiar"
                         backgroundColor="darkgrey"
                         color="black"
+                        handleClear={props.handleClear}
                     />
 
                 </div>
