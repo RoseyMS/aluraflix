@@ -1,12 +1,13 @@
 import "./Button.css"
 
 const Button = (props) => {
+
     const handleClick = () => {
-        if (typeof props.handleShowCategoryLog === "function") {
-            props.handleShowCategoryLog();
+        if (typeof props.handleShowVideoForm === "function") {
+            props.handleShowVideoForm();
         }
-        if (typeof props.handleShowVideoLog === "function") {
-            props.handleShowVideoLog();
+        if (typeof props.handleShowCategoryForm === "function") {
+            props.handleShowCategoryForm();
         }
     };
 

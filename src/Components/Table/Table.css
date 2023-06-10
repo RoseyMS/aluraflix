@@ -1,0 +1,39 @@
+.table-container {
+    box-sizing: border-box;
+    padding: 2rem;
+    background-color: grey;
+}
+
+.category-table {
+    border-collapse: collapse;
+    background-color: darkgray;
+    text-align: center;
+}
+
+.category-table,
+.category-table th {
+    border: 3px solid blue;
+}
+
+.category-table td {
+    border: 3px solid black;
+}
+
+.category-table td {
+    text-align: left;
+}
+
+.category-table-category-title {
+    text-align: center;
+}
+
+.category-table button {
+    background-color: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.category-table button:hover {
+    color: blue;
+}

@@ -14,7 +14,7 @@ const TextInput = (props) => {
         <label>{props.title}</label>
         <input
             placeholder={placeholderModified}
-            required={props.required}
+            required={true}
             value={props.value}
             onChange={handleChange}
             type={type}

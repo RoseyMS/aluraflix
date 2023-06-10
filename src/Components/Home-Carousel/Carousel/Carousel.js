@@ -1,11 +1,27 @@
-import "./Carousel.css"
+import React from 'react';
+import AppSlider from "../AppSlider/AppSlider"
+import VideoCard from "../VideoCard/VideoCard"
+//import videosData from "../../../Data/videos.json"
+const Carousel = ({ category, videos }) => {
+    // Filtrar los videos por categoría
+    //const filteredVideos = videosData.videos.filter((video) => video.category === category);
 
-/* Crea el componente Carrusel donde tendrás que organizar los componentes Slider y 
-VideoCard para que el carrusel 
-funcione correctamente y puedas reutilizarlo sin tener que importar los otros dos componentes. */
+    if (videos.length === 0) {
+        return <></>
+    }
+    return (
+        <>
+            <AppSlider title={category.title}>
+                {videos.map((video) => (
+                    <VideoCard
+                        key={`video${video.id}`}
+                        id={video.id}
+                        thumbnail={video.imgLink}
+                        url={video.videoLink} />
+                ))}
+            </AppSlider>
+        </>
+    );
+};
 
-const Carousel = () => {
-    return <></>
-}
-
-export default Carousel
+export default Carousel;

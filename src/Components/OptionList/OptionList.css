@@ -1,3 +1,7 @@
+.option-list {
+    margin-bottom: 2rem;
+}
+
 .option-list label {
     display: block;
     font-size: 12px;
