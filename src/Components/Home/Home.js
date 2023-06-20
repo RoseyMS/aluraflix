@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import "./Home.css"
 import Banner from "../Banner/Banner"
@@ -19,7 +20,6 @@ const Home = (props) => {
                     videos={videos.filter((video) => video.category === category.title)}
                 />)
         }
-        {/*colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}  */}
     </>
 }
 

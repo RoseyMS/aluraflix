@@ -1,0 +1,78 @@
+{
+  "videos": [
+    {
+      "id": 1,
+      "url": "https://www.youtube.com/embed/JTmbgLwRIvY",
+      "thumbnail": "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
+      "category": "gatos"
+    },
+    {
+      "id": 2,
+      "url": "https://www.youtube.com/embed/JTmbgLwRIvY",
+      "thumbnail": "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
+      "category": "perros"
+    },
+    {
+      "id": 3,
+      "url": "https://www.youtube.com/embed/JTmbgLwRIvY",
+      "thumbnail": "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
+      "category": "otros"
+    },
+    {
+      "id": 4,
+      "url": "https://www.youtube.com/embed/JTmbgLwRIvY",
+      "thumbnail": "https://img.youtube.com/vi/JTmbgLwRIvY/maxresdefault.jpg",
+      "category": "gatos"
+    },
+    {
+      "id": "ca530a8f-83fe-4a6f-b8bf-60ce8236476b",
+      "title": "zzzzzz",
+      "videoLink": "https://www.youtube.com/embed/z31unwB6Vro",
+      "imgLink": "https://img.youtube.com/vi/z31unwB6Vro/maxresdefault.jpg",
+      "category": "gatos",
+      "description": "qqqqq",
+      "securityCode": "aaaaa"
+    },
+    {
+      "id": "8d225b8e-d04e-402d-b9cf-e62f33c30ce8",
+      "title": "qqqqq",
+      "videoLink": "https://www.youtube.com/embed/https://www.dailymotion.com/z31unwB6Vro",
+      "imgLink": "https://img.youtube.com/vi/https://www.dailymotion.com/z31unwB6Vro/maxresdefault.jpg",
+      "category": "perros",
+      "description": "xxxxx",
+      "securityCode": "ddddd"
+    },
+    {
+      "id": "4672fda6-3661-4d3c-8543-4ec74dd5caec",
+      "title": "qqqqq",
+      "videoLink": "https://www.youtube.com/embed/https://dai.ly/x826ptx",
+      "imgLink": "https://img.youtube.com/vi/https://dai.ly/x826ptx/maxresdefault.jpg",
+      "category": "perros",
+      "description": "xxxxx",
+      "securityCode": "ddddd"
+    }
+  ],
+  "categories": [
+    {
+      "id": 23423442243,
+      "title": "otros",
+      "description": "El mundo de lo inesperado. Una mezcla de criaturas diferentes y encantadoras que desafían las categorías tradicionales.",
+      "color": "#52F438",
+      "securityCode": "2829833"
+    },
+    {
+      "id": 9798969676,
+      "title": "gatos",
+      "description": "La realeza felina. Seres misteriosos y adorables con el poder de hacerte sentir inferior y amarlos incondicionalmente. ¡Prepárate para ser su súbdito y recibir la dosis diaria de ronroneos y miradas despectivas!",
+      "color": "#008080",
+      "securityCode": "67436437"
+    },
+    {
+      "id": 678668768686,
+      "title": "perros",
+      "description": "Los eternos optimistas peludos. Siempre listos para una aventura, un juego o un abrazo. ¡Son los maestros de la cola en constante movimiento y la cara de '¿me llevarás contigo?' que te derrite el corazón!",
+      "color": "#97D278",
+      "securityCode": "89797987"
+    }
+  ]
+}

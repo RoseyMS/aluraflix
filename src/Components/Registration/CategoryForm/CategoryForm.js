@@ -1,8 +1,10 @@
-import { v4 as uuidv4 } from 'uuid';
+
 import Table from "../../Table/Table";
 import { useState, useContext } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import { CategoryContext } from "../../../App";
 import Form from "../../Form/Form";
+import { categoriesServices } from "../../../Service/categories-service";
 
 const CategoryForm = (props) => {
     const [id, setId] = useState("")
@@ -49,20 +51,23 @@ const CategoryForm = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if (!name || !description || color || !securityCode) {
-        const dataToSend = {
-            id,
-            title: name,
-            description,
-            color,
-            securityCode
+        if (name && description && color && securityCode) {
+            const dataToSend = {
+                id: id === "" ? uuidv4() : id,
+                title: name,
+                description,
+                color,
+                securityCode
+            }
+            console.log(dataToSend)
+            categoryRegistration(dataToSend)
+            handleClear()
+        } else {
+            console.log("complete todos los campos")
         }
-        categoryRegistration(dataToSend)
-        //}
     };
 
     const onEdit = (editedCategory) => {
-        console.log("CategoryForm-editedCategory-editedCategory.id", editedCategory.id)
         setId(editedCategory.id)
         setName(editedCategory.title);
         setDescription(editedCategory.description);
@@ -75,12 +80,24 @@ const CategoryForm = (props) => {
         inputs.forEach((input) => {
             input.updateValue('');
         });
+        setId("")
+        setName("");
+        setDescription("");
+        setColor("");
+        setSecurityCode("");
     };
     const handleDelete = (id) => {
-        const newCategories = categories.filter((category) => category.id !== id);
-        setCategories(newCategories);
-        handleClear();
+        categoriesServices.deleteCategory(id)
+            .then(() => {
+                const newCategories = categories.filter((category) => category.id !== id);
+                setCategories(newCategories);
+                handleClear();
+            })
+            .catch((error) => {
+                console.error("Error al eliminar la categoría", error);
+            });
     };
+
     return <>
         <Form inputs={inputs} handleSubmit={handleSubmit} handleClear={handleClear} />
         <Table onDelete={handleDelete} onEdit={onEdit} />

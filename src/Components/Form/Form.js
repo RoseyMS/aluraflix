@@ -17,6 +17,7 @@ const Form = (props) => {
                     <TextInput
                         {...input}
                     />
+
                 </div>
             ))
             }
@@ -25,8 +26,9 @@ const Form = (props) => {
                     <div>
                         <OptionList
                             categories={categories}
+                            category={props.category}
                             setCategory={props.setCategory}
-
+                            errorMessage={props.errorMessage}
                         />
                     </div>
                 )

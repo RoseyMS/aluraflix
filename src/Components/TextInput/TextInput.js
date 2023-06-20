@@ -14,11 +14,14 @@ const TextInput = (props) => {
         <label>{props.title}</label>
         <input
             placeholder={placeholderModified}
-            required={true}
             value={props.value}
             onChange={handleChange}
             type={type}
         />
+        {props.error !== '' && (
+            <span className="error-message">{props.error}</span>
+
+        )}
     </div>
 }
 
