@@ -1,27 +1,25 @@
-import React from 'react';
-import AppSlider from "../AppSlider/AppSlider"
-import VideoCard from "../VideoCard/VideoCard"
-//import videosData from "../../../Data/videos.json"
+import React from "react";
+import AppSlider from "../AppSlider/AppSlider";
+import VideoCard from "../VideoCard/VideoCard";
 const Carousel = ({ category, videos }) => {
-    // Filtrar los videos por categoría
-    //const filteredVideos = videosData.videos.filter((video) => video.category === category);
+  if (videos.length === 0) {
+    return <></>;
+  }
 
-    if (videos.length === 0) {
-        return <></>
-    }
-    return (
-        <>
-            <AppSlider title={category.title}>
-                {videos.map((video) => (
-                    <VideoCard
-                        key={`video${video.id}`}
-                        id={video.id}
-                        thumbnail={video.imgLink}
-                        url={video.videoLink} />
-                ))}
-            </AppSlider>
-        </>
-    );
+  return (
+    <div>
+      <AppSlider title={category.title} color={category.color}>
+        {videos.map((video) => (
+          <VideoCard
+            key={`video${video.id}`}
+            id={video.id}
+            imgLink={video.imgLink}
+            videoLink={video.videoLink}
+          />
+        ))}
+      </AppSlider>
+    </div>
+  );
 };
 
 export default Carousel;

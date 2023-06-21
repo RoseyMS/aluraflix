@@ -1,26 +1,28 @@
+import React, { useContext, useEffect } from "react";
+import "./Home.css";
+import Banner from "../Banner/Banner";
+import Carousel from "../Home-Carousel/Carousel/Carousel";
+import { CategoryContext, VideoContext } from "../../App";
 
-import React, { useContext } from "react";
-import "./Home.css"
-import Banner from "../Banner/Banner"
-import Carousel from "../Home-Carousel/Carousel/Carousel"
-import { CategoryContext, VideoContext } from "../../App"
+const Home = ({ fetchVideos }) => {
+  const { videos } = useContext(VideoContext);
+  const { categories } = useContext(CategoryContext);
 
-const Home = (props) => {
+  useEffect(() => {
+    fetchVideos();
+  }, [fetchVideos]);
+  return (
+    <div style={{ backgroundColor: "black" }}>
+      <Banner />
+      {categories.map((category, index) => (
+        <Carousel
+          key={`carousel${index}`}
+          category={category}
+          videos={videos.filter((video) => video.category === category.title)}
+        />
+      ))}
+    </div>
+  );
+};
 
-    const { videos } = useContext(VideoContext);
-    const { categories } = useContext(CategoryContext)
-
-    return <>
-        <Banner />
-        {
-            categories.map((category, index) =>
-                <Carousel
-                    key={`carousel${index}`}
-                    category={category}
-                    videos={videos.filter((video) => video.category === category.title)}
-                />)
-        }
-    </>
-}
-
-export default Home
+export default Home;

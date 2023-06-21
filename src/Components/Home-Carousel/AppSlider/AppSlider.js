@@ -1,7 +1,7 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 /* El componente Slider se encargará de rotar los videos. */
 const AppSlider = (props) => {
   const settings = {
@@ -12,12 +12,20 @@ const AppSlider = (props) => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    draggable: true
+    draggable: true,
   };
 
   return (
     <div>
-      <h2>{props.title}</h2>
+      <h2
+        style={{
+          color: props.color,
+          display: "inline-block",
+          marginLeft: "1rem",
+        }}
+      >
+        {props.title}
+      </h2>
       <Slider {...settings}>{props.children}</Slider>
     </div>
   );

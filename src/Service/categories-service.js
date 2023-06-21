@@ -1,65 +1,54 @@
-
-
 const categoriesList = () => {
-    return fetch("http://localhost:8000/categories")
-        .then((respuesta) => respuesta.json()).then((data) => {
-            return data
-        })
-}
-
-
+  return fetch("http://localhost:8000/categories")
+    .then((respuesta) => respuesta.json())
+    .then((data) => {
+      return data;
+    });
+};
 
 const addCategory = (id, title, description, color, securityCode) => {
-    return fetch("http://localhost:8000/categories", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            id,
-            title,
-            description,
-            color,
-            securityCode
-        })
-    });
-}
+  return fetch("http://localhost:8000/categories", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id,
+      title,
+      description,
+      color,
+      securityCode,
+    }),
+  });
+};
 
 const deleteCategory = (id) => {
-    return fetch(`http://localhost:8000/categories/${id}`, {
-        method: "DELETE"
-    });
-}
-/* const CategoriesDetails = (id) => {
-    return fetch(`http://localhost:8000/categories/${id}`).then(respuesta =>
-        respuesta.json()
-    );
-} */
+  return fetch(`http://localhost:8000/categories/${id}`, {
+    method: "DELETE",
+  });
+};
+
 const searchCategory = (id) => {
-    return fetch(`http://localhost:8000/categories?q=${id}`).then(respuesta =>
-        respuesta.json()
-    );
-}
+  return fetch(`http://localhost:8000/categories?q=${id}`).then((respuesta) =>
+    respuesta.json()
+  );
+};
 
 const editCategory = (id, title, description, color, securityCode) => {
-    return fetch(`http://localhost:8000/categories/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ id, title, description, color, securityCode })
-    })
-        .then(respuesta => respuesta.json())
-        .catch((err) => console.error("ha ocurrido un error", err))
-}
+  return fetch(`http://localhost:8000/categories/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id, title, description, color, securityCode }),
+  })
+    .then((respuesta) => respuesta.json())
+    .catch((err) => console.error("ha ocurrido un error", err));
+};
 export const categoriesServices = {
-    categoriesList,
-    addCategory,
-    editCategory,
-    deleteCategory,
-    searchCategory
-    /* 
-    CategorieDetails,
-    
-    */
+  categoriesList,
+  addCategory,
+  editCategory,
+  deleteCategory,
+  searchCategory,
 };
