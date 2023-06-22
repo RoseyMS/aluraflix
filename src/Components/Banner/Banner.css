@@ -7,3 +7,9 @@
     background-position: initial;
     background-color: black;
 }
+@media screen and  (max-width: 600px) {
+    .banner-container {
+        height: 30vh;
+        background-position: center;
+    }
+}

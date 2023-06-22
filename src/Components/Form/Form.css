@@ -29,3 +29,21 @@
     margin-top: 5px;
     margin-bottom: 2px;
 }
+@media screen and  (max-width: 600px) {
+    .buttons-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 10vh;
+    }
+    .left-btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+       
+    }
+    .left-btn-container button {
+        margin-right: 0;
+    
+    }
+}

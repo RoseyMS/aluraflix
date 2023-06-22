@@ -1,10 +1,15 @@
 import { v4 as uuidv4 } from "uuid";
+import LinesEllipsis from "react-lines-ellipsis";
+import responsiveHOC from "react-lines-ellipsis/lib/responsiveHOC";
 import "./Table.css";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CategoryContext } from "../../App";
+
+const ResponsiveEllipsis = responsiveHOC()(LinesEllipsis);
 
 const Table = ({ onEdit, onDelete }) => {
   const { categories } = useContext(CategoryContext);
+  const [truncated, setTruncated] = useState(true);
 
   return (
     <div className="table-container">
@@ -22,7 +27,30 @@ const Table = ({ onEdit, onDelete }) => {
           {categories.map((category) => (
             <tr key={uuidv4()}>
               <td>{category.title}</td>
-              <td>{category.description}</td>
+              <td>
+                {truncated ? (
+                  <ResponsiveEllipsis
+                    text={category.description}
+                    maxLine="3"
+                    ellipsis={
+                      <>
+                        ...{" "}
+                        <button onClick={() => setTruncated(!truncated)}>
+                          Leer más
+                        </button>
+                      </>
+                    }
+                    basedOn="words"
+                  />
+                ) : (
+                  <div>
+                    {category.description}{" "}
+                    <button onClick={() => setTruncated(!truncated)}>
+                      Menos
+                    </button>
+                  </div>
+                )}
+              </td>
               <td style={{ backgroundColor: category.color }}></td>
               <td>
                 <button onClick={() => onEdit(category)}>Editar</button>

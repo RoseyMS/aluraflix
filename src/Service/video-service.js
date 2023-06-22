@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 
 const videosList = () => {
-  return fetch("http://localhost:8000/videos").then((respuesta) =>
+  //joyous-plum-garters.cyclic.app/videos
+  https: return fetch("http://localhost:8000/videos").then((respuesta) =>
     respuesta.json()
   );
 };
-//"https://periwinkle-dhole-wear.cyclic.app/client"
 
 const addVideo = (
   title,
@@ -32,14 +32,7 @@ const addVideo = (
   });
 };
 
-/* const videoDetails = (id) => {
-    return fetch(`http://localhost:8000/videos/${id}`).then(respuesta =>
-        respuesta.json()
-    );
-}  */
-
 export const videoServices = {
   videosList,
   addVideo,
-  /*  videoDetails */
 };

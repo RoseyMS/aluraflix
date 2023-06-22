@@ -200,19 +200,3 @@ function App() {
 }
 
 export default App;
-
-/*  {showVideoForm && (
-            <VideoForm
-              handleShowCategoryForm={handleShowCategoryForm}
-              videoRegistration={videoRegistration}
-              isCategorySeleccionRequired={isCategorySeleccionRequired}
-            />
-          )}
-          {showCategoryForm && (
-            <CategoryForm
-              categoryRegistration={categoryRegistration}
-              handleShowCategoryForm={handleShowCategoryForm}
-              isCategorySeleccionRequired={isCategorySeleccionRequired}
-            />
-          )}
-          {!showCategoryForm && !showVideoForm && <Home />} */

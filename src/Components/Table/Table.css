@@ -37,3 +37,22 @@
 .category-table button:hover {
     color: blue;
 }
+@media screen and  (max-width: 600px) {
+    .table-container{
+        overflow:scroll;
+    }
+    .category-table {
+        width: 100%;
+        font-size: 11px;
+    }
+    .category-table,
+    .category-table th {
+        border: 2px solid blue;
+    }
+    .category-table td {
+        border: 2px solid black;
+    }
+    .category-table button {
+        font-size: 11px;
+    }
+}

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import "./Home.css";
 import Banner from "../Banner/Banner";
 import Carousel from "../Home-Carousel/Carousel/Carousel";
 import { CategoryContext, VideoContext } from "../../App";
@@ -10,7 +9,7 @@ const Home = ({ fetchVideos }) => {
 
   useEffect(() => {
     fetchVideos();
-  }, [fetchVideos]);
+  }, []);
   return (
     <div style={{ backgroundColor: "black" }}>
       <Banner />

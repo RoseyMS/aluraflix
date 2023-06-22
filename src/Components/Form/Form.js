@@ -4,7 +4,7 @@ import TextInput from "../TextInput/TextInput";
 import OptionList from "../OptionList/OptionList";
 import { CategoryContext } from "../../App";
 import { Link } from "react-router-dom";
-
+import "./Form.css";
 const Form = (props) => {
   const { categories } = useContext(CategoryContext);
 
