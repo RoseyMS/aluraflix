@@ -1,9 +1,8 @@
 import { v4 as uuidv4 } from "uuid";
 
 const videosList = () => {
-  //joyous-plum-garters.cyclic.app/videos
-  https: return fetch("http://localhost:8000/videos").then((respuesta) =>
-    respuesta.json()
+  return fetch("https://perfect-sari-crab.cyclic.app/videos").then(
+    (respuesta) => respuesta.json()
   );
 };
 
@@ -15,7 +14,7 @@ const addVideo = (
   description,
   securityCode
 ) => {
-  return fetch("http://localhost:8000/videos", {
+  return fetch("https://perfect-sari-crab.cyclic.app/videos", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

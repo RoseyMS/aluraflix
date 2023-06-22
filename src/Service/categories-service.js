@@ -1,5 +1,5 @@
 const categoriesList = () => {
-  return fetch("http://localhost:8000/categories")
+  return fetch("https://perfect-sari-crab.cyclic.app/categories")
     .then((respuesta) => respuesta.json())
     .then((data) => {
       return data;
@@ -7,7 +7,7 @@ const categoriesList = () => {
 };
 
 const addCategory = (id, title, description, color, securityCode) => {
-  return fetch("http://localhost:8000/categories", {
+  return fetch("https://perfect-sari-crab.cyclic.app/categories", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,19 +23,19 @@ const addCategory = (id, title, description, color, securityCode) => {
 };
 
 const deleteCategory = (id) => {
-  return fetch(`http://localhost:8000/categories/${id}`, {
+  return fetch(`https://perfect-sari-crab.cyclic.app/categories/${id}`, {
     method: "DELETE",
   });
 };
 
 const searchCategory = (id) => {
-  return fetch(`http://localhost:8000/categories?q=${id}`).then((respuesta) =>
-    respuesta.json()
+  return fetch(`https://perfect-sari-crab.cyclic.app/categories?q=${id}`).then(
+    (respuesta) => respuesta.json()
   );
 };
 
 const editCategory = (id, title, description, color, securityCode) => {
-  return fetch(`http://localhost:8000/categories/${id}`, {
+  return fetch(`https://perfect-sari-crab.cyclic.app/categories/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
